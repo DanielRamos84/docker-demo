@@ -5,7 +5,8 @@ app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
-var server = app.listen(3000, function () {
+// Bind to 0.0.0.0 to make it accessible from outside the container
+var server = app.listen(3000, '0.0.0.0', function () {  // Change here
   var host = server.address().address;
   var port = server.address().port;
 
